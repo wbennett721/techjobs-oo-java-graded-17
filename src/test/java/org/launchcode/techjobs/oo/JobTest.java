@@ -2,6 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
+import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -29,9 +30,10 @@ public class JobTest {
     }
 
 @Test
-public void testJobsForEquality(){
+public void testToStringStartsAndEndsWithNewLine(){
 
 }
+
 
 
 }
