@@ -9,6 +9,8 @@ public class Job {
 
     private String name;
     private Employer employer;
+
+
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
@@ -93,7 +95,43 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+
+
+    @Override
+    public String toString() {
+        String output = "";
+        String newLine = System.lineSeparator();
+        if (name.equals("")) {
+            name = "Data not available";
+
+        }
+        if (employer.getValue().equals("") || employer.getValue() == null) {
+            employer.setValue("Data not available");
+        }
+        if (location.getValue().equals("") || location.getValue() == null) {
+            location.setValue("Data not available");
+        }
+        if (positionType.getValue().equals("") || positionType.getValue() == null) {
+            positionType.setValue("Data not available");
+        }
+        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
+            coreCompetency.setValue("Data not available");
+        }
+
+        return  newLine +
+                "ID=" + id + newLine +
+                "name='" + name + newLine +
+                ", employer=" + employer + newLine +
+                ", location=" + location + newLine +
+                ", positionType=" + positionType + newLine +
+                ", coreCompetency=" + coreCompetency + newLine;
+
+    }
 }
+
+
+
+
 
 
 
