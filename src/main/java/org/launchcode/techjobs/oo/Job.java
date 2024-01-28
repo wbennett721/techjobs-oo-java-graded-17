@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
+    private final int id;
     private static int nextId = 1;
 
     private String name;
@@ -63,7 +63,7 @@ public class Job {
         this.name = name;
     }
 
-    public Employer getEmployer(String acme) {
+    public Employer getEmployer() {
         return employer;
     }
 
@@ -71,7 +71,7 @@ public class Job {
         this.employer = employer;
     }
 
-    public Location getLocation(String desert) {
+    public Location getLocation() {
         return location;
     }
 
@@ -79,7 +79,7 @@ public class Job {
         this.location = location;
     }
 
-    public PositionType getPositionType(String acme) {
+    public PositionType getPositionType() {
         return positionType;
     }
 
@@ -87,7 +87,7 @@ public class Job {
         this.positionType = positionType;
     }
 
-    public CoreCompetency getCoreCompetency(String persistence) {
+    public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
 
@@ -118,13 +118,13 @@ public class Job {
             coreCompetency.setValue("Data not available");
         }
 
-        return  newLine +
-                "ID=" + id + newLine +
-                "name='" + name + newLine +
-                ", employer=" + employer + newLine +
-                ", location=" + location + newLine +
-                ", positionType=" + positionType + newLine +
-                ", coreCompetency=" + coreCompetency + newLine;
+        return newLine +
+                "ID: " + id + newLine +
+                "Name: " + name + newLine +
+                "Employer: " + employer + newLine +
+                "Location: " + location + newLine +
+                "Position Type: " + positionType + newLine +
+                "Core Competency: " + coreCompetency + newLine;
 
     }
 }

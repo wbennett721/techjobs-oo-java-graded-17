@@ -2,10 +2,6 @@ package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-import static java.lang.System.lineSeparator;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
@@ -51,10 +47,11 @@ public void testToStringStartsAndEndsWithNewLine(){
     public void testToStringContainsCorrectLabelsAndData() {
         Job job1 = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
         String newLine = System.lineSeparator();
-        assertEquals("ID=" + job1.getId() + newLine +
+        assertEquals(newLine +
+                "ID: " + job1.getId() + newLine +
                 "Name: " + job1.getName() + newLine +
-                "Employer: " + job1.getEmployer("") + newLine +
-                "location: " + job1.getLocation() + newLine +
+                "Employer: " + job1.getEmployer() + newLine +
+                "Location: " + job1.getLocation() + newLine +
                 "Position Type: " + job1.getPositionType() + newLine +
                 "Core Competency: " + job1.getCoreCompetency() + newLine, job1.toString());
 
@@ -63,14 +60,15 @@ public void testToStringStartsAndEndsWithNewLine(){
 
     @Test
     public void testToStringHandlesEmptyField()  {
-        Job job = new Job("", new Employer(""), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
+        Job job2 = new Job("", new Employer(""), new Location("StL"), new PositionType("Back-end developer"), new CoreCompetency("Java"));
         String newLine = System.lineSeparator();
-        assertEquals("ID=" + job.getId() + newLine +
+        assertEquals(newLine +
+                "ID: " + job2.getId() + newLine +
                 "Name: Data not available" + newLine +
                 "Employer: Data not available" + newLine +
-                "location: " + job.getLocation() + newLine +
-                "Position Type: " + job.getPositionType() + newLine +
-                "Core Competency=" + job.getCoreCompetency() + newLine, job.toString());
+                "Location: " + job2.getLocation() + newLine +
+                "Position Type: " + job2.getPositionType() + newLine +
+                "Core Competency: " + job2.getCoreCompetency() + newLine, job2.toString());
     }
 
 
