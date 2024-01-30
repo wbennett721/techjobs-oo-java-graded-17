@@ -7,12 +7,12 @@ public class PositionType extends JobField {
 
 
     public PositionType(String value) {
-        super(value, name, employer);
+        super(value);
 
     }
 
     public PositionType(String value, int id) {
-        super(value, name, employer);
+        super(value);
         JobField.id = id;
     }
 

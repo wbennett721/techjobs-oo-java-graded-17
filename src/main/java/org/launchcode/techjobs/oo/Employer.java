@@ -6,12 +6,12 @@ public class Employer extends JobField {
 
 
     public Employer(String value) {
-        super(value, name, employer);
+        super(value);
 
     }
 
     public Employer(String value, int id) {
-        super(value, name, employer);
+        super(value);
         JobField.id = id;
     }
     // Custom toString, equals, and hashCode methods:

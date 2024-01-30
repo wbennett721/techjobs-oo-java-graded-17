@@ -5,16 +5,15 @@ import java.util.Objects;
 public class Location extends JobField {
 
 
-    private static final employer;
-    private static final name;
+
 
     public Location(String value) {
-        super(value, name, employer);
+        super(value);
 
     }
 
     public Location(String value, int id) {
-        super(value, name, employer);
+        super(value);
         JobField.id = id;
     }
 
